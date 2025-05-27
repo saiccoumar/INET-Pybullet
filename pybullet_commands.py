@@ -3,7 +3,7 @@ import pybullet_data
 import time
 import random
 
-# FUN.connect(FUN.GUI)
+FUN.connect(FUN.GUI)
 FUN.setGravity(0, 0, -9.81)
 FUN.setAdditionalSearchPath(pybullet_data.getDataPath())
 FUN.configureDebugVisualizer(FUN.COV_ENABLE_GUI, 0)
@@ -43,17 +43,16 @@ for i in range(10):
     if False:
         print("nothing")
 
-while True:
-    FUN.stepSimulation()
-    time.sleep(time_step)
-    step_counter += 1
-    time.sleep(2)
-    # Drop the cube again every second
-    if step_counter % drop_interval == 0:
-        new_height = random.uniform(1.0, 2.0)
-        FUN.resetBasePositionAndOrientation(cube_id, [0, 0, new_height], cube_start_orientation)
-        FUN.resetBaseVelocity(cube_id, [0, 0, 0], [0, 0, 0])
+# while True:
+#     FUN.stepSimulation()
+#     time.sleep(time_step)
+#     step_counter += 1
+#     time.sleep(2)
+#     # Drop the cube again every second
+#     if step_counter % drop_interval == 0:
+#         new_height = random.uniform(1.0, 2.0)
+#         FUN.resetBasePositionAndOrientation(cube_id, [0, 0, new_height], cube_start_orientation)
+#         FUN.resetBaseVelocity(cube_id, [0, 0, 0], [0, 0, 0])
 
 print("Simulation finished.")
-
 
